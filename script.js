@@ -9,9 +9,12 @@ const condition = document.getElementById("condition");
 const weatherIcon = document.getElementById("weatherIcon");
 const weatherDataDiv = document.getElementById("weatherData");
 
+// ✅ Your Render backend URL
+const backendBaseUrl = "https://weather-backend-65j7.onrender.com";
+
 // 🔁 Load previously saved city on page load
 window.addEventListener("load", () => {
-  axios.get("http://localhost:5000/api/preference")
+  axios.get(`${backendBaseUrl}/api/preference`)
     .then((response) => {
       const savedCity = response.data.city;
       if (savedCity) {
@@ -47,8 +50,8 @@ getWeatherBtn.addEventListener("click", () => {
 
       weatherDataDiv.classList.remove("hidden");
 
-      
-      axios.post("http://localhost:5000/api/preference", { city })
+      // ✅ Save city to backend (Render)
+      axios.post(`${backendBaseUrl}/api/preference`, { city })
         .then(() => console.log("✅ City saved successfully"))
         .catch((err) => console.error("❌ Error saving city:", err));
     })
