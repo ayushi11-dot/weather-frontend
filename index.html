@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Weather App</h1>
+  <input id="cityInput" type="text" placeholder="Enter city name" />
+  <button id="getWeatherBtn">Get Weather</button>
+
+  <div id="weatherData" class="hidden">
+    <h2 id="cityName"></h2>
+    <p id="temperature"></p>
+    <p id="condition"></p>
+    <img id="weatherIcon" alt="weather icon" src="C:\Users\ayush\OneDrive\Desktop\weather-app\weather\OIP (1).webp" />
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
